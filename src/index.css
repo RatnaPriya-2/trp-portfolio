@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+/* =========================
+🎨 DESIGN TOKENS
+========================= */
+@theme {
+  /* =========================
+     🌌 CORE LAYERS (App base)
+  ========================= */
+  --color-canvas: #0b0120; /* main app background */
+  --color-base: #140233; /* base layer */
+  --color-elevated: #1c044d; /* cards / raised surfaces */
+
+  /* =========================
+     ✍️ TEXT SYSTEM
+  ========================= */
+  --color-main: #ffffff;
+  --color-subtle: #c4b5fd;
+  --color-faint: #a78bfa;
+
+  /* =========================
+     🟣 BRAND (Primary identity)
+  ========================= */
+  --color-brand: #7c3aed;
+  --color-brand-strong: #5b21b6;
+  --color-brand-soft: #1e0640;
+
+  /* =========================
+     💗 ACCENT (Highlights / CTA)
+  ========================= */
+  /* --color-accent: #ff0073;
+  --color-accent-soft: #ff2d95; */
+
+  /* =========================
+     🌫 UI SUPPORT (Subtle elements)
+  ========================= */
+  --color-surface: #140233;
+  --color-surface-glass: #1c044d;
+
+  /* =========================
+     🧵 STRUCTURE (Borders / outlines)
+  ========================= */
+  --color-edge: #2a0a5e;
+  --color-focus: #7c3aed;
+
+  /* =========================
+     ✨ EFFECT TOKENS
+  ========================= */
+  --color-glow-brand: #7c3aed;
+  --color-glow-accent: #ff0073;
+
+  /* =========================
+     🔘 SHAPE
+  ========================= */
+  --radius: 0.75rem;
+}
+
+/* =========================
+🌑 BASE LAYER
+========================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: radial-gradient(circle at top, #1a0033, #0b0120 60%);
+
+    font-family: "Inter", sans-serif;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  .font-display {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* =========================
+🧩 COMPONENTS
+========================= */
+@layer components {
+  /* 🌫️ Frosted Glass Panel */
+  .frost-panel {
+    background: color-mix(in srgb, var(--surface-glass) 55%, transparent);
+    backdrop-filter: blur(18px);
+    border: 1px solid color-mix(in srgb, var(--border-soft) 60%, transparent);
+    border-radius: var(--radius-base);
+  }
+
+  .frost-panel-strong {
+    background: color-mix(in srgb, var(--surface-glass) 80%, transparent);
+    backdrop-filter: blur(28px);
+    border: 1px solid color-mix(in srgb, var(--border-soft) 70%, transparent);
+    border-radius: var(--radius-base);
+  }
+
+  /* ✨ Neon Text Effects */
+  .neon-text {
+    text-shadow: 0 0 25px color-mix(in srgb, var(--brand-main) 65%, transparent);
+  }
+
+  .neon-accent {
+    text-shadow: 0 0 25px
+      color-mix(in srgb, var(--accent-main) 65%, transparent);
+  }
+
+  /* 🌈 Gradient Button */
+  .btn-gradient {
+    background: linear-gradient(120deg, var(--brand-main), var(--accent-main));
+    color: white;
+    border-radius: var(--radius-base);
+    padding: 0.6rem 1.4rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gradient:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow:
+      0 0 25px color-mix(in srgb, var(--accent-main) 40%, transparent),
+      0 0 50px color-mix(in srgb, var(--brand-main) 30%, transparent);
+  }
+
+  /* 🔳 Glow Card */
+  .card-glow {
+    background: var(--surface-card);
+    border-radius: var(--radius-base);
+    box-shadow: 0 0 40px color-mix(in srgb, var(--brand-main) 20%, transparent);
+  }
+}
+
+/* =========================
+🛠 UTILITIES
+========================= */
+@layer utilities {
+  /* 🌟 Entry Animation */
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  /* 🌊 Floating Motion */
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+
+  /* ⚡ Glow Pulse */
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 10px var(--brand-main);
+    }
+    50% {
+      box-shadow: 0 0 35px var(--accent-main);
+    }
+  }
+
+  /* 🎞 Animation Classes */
+  .animate-rise {
+    animation: rise-in 0.6s ease-out both;
+  }
+
+  .animate-drift {
+    animation: drift 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2.5s infinite;
+  }
+
+  /* ⏱ Delay Utilities */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+}

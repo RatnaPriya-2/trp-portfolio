@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import Button from "../components/Button";
-import { NavLink } from "react-router-dom";
-import { Cross, Hamburger, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

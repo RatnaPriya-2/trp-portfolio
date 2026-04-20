@@ -4,59 +4,33 @@
 🎨 DESIGN TOKENS
 ========================= */
 @theme {
-  /* =========================
-     🌌 CORE LAYERS (App base)
-  ========================= */
-  --color-canvas: #0b0120; /* main app background */
-  --color-base: #140233; /* base layer */
-  --color-elevated: #1c044d; /* cards / raised surfaces */
+  /* 🌌 CORE COLORS */
+  --color-header: #080808;
+  --color-canvas: #110720;
+  --color-base: #1a0b2e;
+  --color-accent: #7127ba;
 
-  /* =========================
-     ✍️ TEXT SYSTEM
-  ========================= */
+  /* ✍️ TEXT */
   --color-main: #ffffff;
   --color-subtle: #c4b5fd;
   --color-faint: #a78bfa;
 
-  /* =========================
-     🟣 BRAND (Primary identity)
-  ========================= */
-  --color-brand: #7c3aed;
-  --color-brand-strong: #5b21b6;
-  --color-brand-soft: #1e0640;
+  /* 🌫 UI SURFACES */
+  --color-surface: rgba(113, 39, 186, 0.08);
+  --color-surface-strong: rgba(113, 39, 186, 0.15);
 
-  /* =========================
-     💗 ACCENT (Highlights / CTA)
-  ========================= */
-  /* --color-accent: #ff0073;
-  --color-accent-soft: #ff2d95; */
+  /* 🧵 STRUCTURE */
+  --color-edge: rgba(113, 39, 186, 0.25);
 
-  /* =========================
-     🌫 UI SUPPORT (Subtle elements)
-  ========================= */
-  --color-surface: #140233;
-  --color-surface-glass: #1c044d;
+  /* ✨ EFFECTS */
+  --color-glow: rgba(113, 39, 186, 0.6);
 
-  /* =========================
-     🧵 STRUCTURE (Borders / outlines)
-  ========================= */
-  --color-edge: #2a0a5e;
-  --color-focus: #7c3aed;
-
-  /* =========================
-     ✨ EFFECT TOKENS
-  ========================= */
-  --color-glow-brand: #7c3aed;
-  --color-glow-accent: #ff0073;
-
-  /* =========================
-     🔘 SHAPE
-  ========================= */
-  --radius: 0.75rem;
+  /* 🔘 SHAPE */
+  --radius-base: 0.75rem;
 }
 
 /* =========================
-🌑 BASE LAYER
+🌑 BASE
 ========================= */
 @layer base {
   html {
@@ -64,17 +38,24 @@
   }
 
   body {
-    background: radial-gradient(circle at top, #1a0033, #0b0120 60%);
-
-    font-family: "Inter", sans-serif;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Montserrat", sans-serif;
+    color: var(--color-main);
   }
 
   button {
     cursor: pointer;
   }
 
+  /* Font utilities — actively used across components */
   .font-display {
-    font-family: "Playfair Display", serif;
+    font-family: "Cinzel", serif; /* Navbar logo, Contact heading */
+  }
+
+  .font-bodoni {
+    font-family: "Bodoni Moda", serif; /* Hero "precision" */
   }
 }
 
@@ -82,53 +63,19 @@
 🧩 COMPONENTS
 ========================= */
 @layer components {
-  /* 🌫️ Frosted Glass Panel */
-  .frost-panel {
-    background: color-mix(in srgb, var(--surface-glass) 55%, transparent);
-    backdrop-filter: blur(18px);
-    border: 1px solid color-mix(in srgb, var(--border-soft) 60%, transparent);
+  /* 🌫 Glass Card — used for project/about cards */
+  .card {
+    background: var(--color-surface);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--color-edge);
     border-radius: var(--radius-base);
-  }
-
-  .frost-panel-strong {
-    background: color-mix(in srgb, var(--surface-glass) 80%, transparent);
-    backdrop-filter: blur(28px);
-    border: 1px solid color-mix(in srgb, var(--border-soft) 70%, transparent);
-    border-radius: var(--radius-base);
-  }
-
-  /* ✨ Neon Text Effects */
-  .neon-text {
-    text-shadow: 0 0 25px color-mix(in srgb, var(--brand-main) 65%, transparent);
-  }
-
-  .neon-accent {
-    text-shadow: 0 0 25px
-      color-mix(in srgb, var(--accent-main) 65%, transparent);
-  }
-
-  /* 🌈 Gradient Button */
-  .btn-gradient {
-    background: linear-gradient(120deg, var(--brand-main), var(--accent-main));
-    color: white;
-    border-radius: var(--radius-base);
-    padding: 0.6rem 1.4rem;
-    font-weight: 500;
     transition: all 0.3s ease;
   }
 
-  .btn-gradient:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow:
-      0 0 25px color-mix(in srgb, var(--accent-main) 40%, transparent),
-      0 0 50px color-mix(in srgb, var(--brand-main) 30%, transparent);
-  }
-
-  /* 🔳 Glow Card */
-  .card-glow {
-    background: var(--surface-card);
-    border-radius: var(--radius-base);
-    box-shadow: 0 0 40px color-mix(in srgb, var(--brand-main) 20%, transparent);
+  .card:hover {
+    background: var(--color-surface-strong);
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px var(--color-glow);
   }
 }
 
@@ -136,56 +83,48 @@
 🛠 UTILITIES
 ========================= */
 @layer utilities {
-  /* 🌟 Entry Animation */
-  @keyframes rise-in {
+  /* 🌟 Rise In — used in Navbar mobile menu */
+  @keyframes rise {
     from {
       opacity: 0;
       transform: translateY(20px);
-      filter: blur(8px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
-      filter: blur(0);
     }
   }
 
-  /* 🌊 Floating Motion */
-  @keyframes drift {
-    0%,
+  /* ✨ Animated Border — used in Hero resume button */
+  @keyframes border-move {
+    0% {
+      background-position: 0% 50%;
+    }
     100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-14px);
+      background-position: 200% 50%;
     }
   }
 
-  /* ⚡ Glow Pulse */
-  @keyframes pulse-glow {
-    0%,
-    100% {
-      box-shadow: 0 0 10px var(--brand-main);
-    }
-    50% {
-      box-shadow: 0 0 35px var(--accent-main);
-    }
+  .animate-border-move {
+    padding: 1px;
+    border-radius: 9999px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #04597d,
+      #07528c,
+      #04587c,
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: border-move 3s linear infinite reverse;
   }
 
-  /* 🎞 Animation Classes */
   .animate-rise {
-    animation: rise-in 0.6s ease-out both;
+    animation: rise 0.6s ease-out both;
   }
 
-  .animate-drift {
-    animation: drift 4s ease-in-out infinite;
-  }
-
-  .animate-pulse-glow {
-    animation: pulse-glow 2.5s infinite;
-  }
-
-  /* ⏱ Delay Utilities */
+  /* ⏱ Animation Delays */
   .delay-100 {
     animation-delay: 100ms;
   }
@@ -194,8 +133,5 @@
   }
   .delay-300 {
     animation-delay: 300ms;
-  }
-  .delay-500 {
-    animation-delay: 500ms;
   }
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import ocean from "../assets/ocean.jpg";
 
 const Experience = () => {
   return (

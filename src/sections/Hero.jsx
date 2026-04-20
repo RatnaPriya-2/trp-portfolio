@@ -1,5 +1,4 @@
 import React from "react";
-import ocean from "../assets/ocean.jpg";
 import download from "../assets/download.png";
 import arrow from "../assets/arrow.png";
 import { motion } from "framer-motion";

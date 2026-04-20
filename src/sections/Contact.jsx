@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import ocean from "../assets/ocean.jpg";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {

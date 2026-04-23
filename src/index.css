@@ -53,10 +53,6 @@
   .font-display {
     font-family: "Cinzel", serif; /* Navbar logo, Contact heading */
   }
-
-  .font-bodoni {
-    font-family: "Bodoni Moda", serif; /* Hero "precision" */
-  }
   .title-text {
     background: linear-gradient(
       to right,

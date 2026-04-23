@@ -24,6 +24,13 @@ const App = () => {
       {/* Overlay */}
       {/* <div className="absolute inset-0 bg-linear-to-b from-black/85 via-black/80 to-black/85"></div> */}
       <div className="absolute inset-0 bg-black/85"></div>
+      
+      {/* Ambient background glowing orbs */}
+      <div className="fixed top-[-10%] left-[-20%] w-[40vw] h-[40vw] bg-cyan-700/20 rounded-full blur-[120px] pointer-events-none z-10 mix-blend-screen"></div>
+      <div className="fixed top-[20%] right-[-10%] w-[30vw] h-[30vw] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none z-10 mix-blend-screen"></div>
+      <div className="fixed bottom-[-10%] right-[-20%] w-[40vw] h-[40vw] bg-cyan-700/15 rounded-full blur-[120px] pointer-events-none z-10 mix-blend-screen"></div>
+      <div className="fixed bottom-[20%] left-[-10%] w-[30vw] h-[30vw] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none z-10 mix-blend-screen"></div>
+
       {/* Content */}
       <div className=" relative z-20">
         <Navbar />

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
-import send from "../assets/send.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +13,11 @@ const Contact = () => {
     fullName: "",
     email: "",
     message: "",
+  });
+  const [touched, setTouched] = useState({
+    fullName: false,
+    email: false,
+    message: false,
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -50,6 +54,14 @@ const Contact = () => {
   const handleChange = (e) => {
     let { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (touched[name]) {
+      setErrors((prev) => ({ ...prev, [name]: validateField(e) }));
+    }
+  };
+
+  const handleBlur = (e) => {
+    let { name } = e.target;
+    setTouched((prev) => ({ ...prev, [name]: true }));
     setErrors((prev) => ({ ...prev, [name]: validateField(e) }));
   };
 
@@ -64,6 +76,7 @@ const Contact = () => {
       if (error) newErrors[key] = error;
     });
     setErrors(newErrors);
+    setTouched({ fullName: true, email: true, message: true });
     if (Object.values(newErrors).every((err) => err === "")) {
       setIsLoading(true);
       try {
@@ -99,15 +112,17 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className=" mt-60 flex flex-col items-center relative min-h-screen px-20  z-40 scroll-mt-30"
+      className=" mt-60 flex flex-col items-center relative min-h-screen px-6 md:px-20  z-40 scroll-mt-30"
     >
-      <h2 className="text-xl font-semibold mb-6 title-text">
-        Get in Touch
-      </h2>
+      <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-20">
+        <h2 className="text-xl font-semibold mb-6 title-text">
+          Get in Touch
+        </h2>
 
-      <h3 className="text-3xl md:text-4xl mb-6 font-semibold leading-snug max-w-md">
-        Let’s <span className="title-text">work</span> together
-      </h3>
+        <h3 className="text-3xl md:text-4xl font-semibold leading-snug max-w-md">
+          Let’s <span className="title-text">work</span> together
+        </h3>
+      </div>
 
       <div className=" flex max-w-4xl w-full flex-col md:flex-row items-start justify-center gap-15">
         <motion.div
@@ -190,6 +205,7 @@ const Contact = () => {
                 name="fullName"
                 value={formData.fullName}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
               {errors.fullName && (
                 <span className="text-red-400 text-sm mt-2">
@@ -208,6 +224,7 @@ const Contact = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                onBlur={handleBlur}
               />
               {errors.email && (
                 <span className="text-red-400 text-sm mt-2">
@@ -226,6 +243,7 @@ const Contact = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                onBlur={handleBlur}
               ></textarea>
               {errors.message && (
                 <span className="text-red-400 text-sm mt-2">

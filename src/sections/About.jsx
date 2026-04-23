@@ -32,7 +32,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className=" mt-60 flex flex-col md:flex-row items-center justify-center flex-wrap relative min-h-screen px-20 gap-10 z-40 scroll-mt-30  "
+      className=" mt-60 flex flex-col md:flex-row items-center justify-center flex-wrap relative min-h-screen px-6 md:px-20 gap-10 z-40 scroll-mt-30  "
     >
       {/* Content */}
 
@@ -43,7 +43,7 @@ const About = () => {
           <span className="title-text">modern web </span>experiences
         </h2>
 
-        <p className="mt-3 text-white/90 text-lg">
+        <p className="mt-6 text-white/90 text-lg">
           Focused on clarity, usability, and interfaces that feel effortless.
         </p>
 

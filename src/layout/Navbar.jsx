@@ -60,8 +60,8 @@ const Navbar = () => {
         </div>
       </nav>
       {isOpen && (
-        <div className="md:hidden animate-rise">
-          <div className="container mx-auto bg-brand-soft px-6 py-6 flex flex-col gap-5">
+        <div className="md:hidden animate-rise relative z-50">
+          <div className="container mx-auto bg-black px-6 py-6 flex flex-col gap-5">
             {navLinks.map((link, i) => (
               <a
                 className="text-sm text-main/70 hover:text-main"

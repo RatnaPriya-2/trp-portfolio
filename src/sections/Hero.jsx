@@ -24,7 +24,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-20 flex flex-col items-center justify-center relative min-h-screen">
+    <section className="pt-32 pb-16 md:pt-20 md:pb-0 flex flex-col items-center justify-center relative min-h-screen">
       {/* Content */}
       <div className="relative z-50 flex items-center justify-center gap-8 flex-col md:flex-row px-10 md:px-20">
         {/* LEFT */}
@@ -52,7 +52,7 @@ const Hero = () => {
               modern
             </span>{" "}
             web experiences with{" "}
-            <span className="italic text-white/90 tracking-wider font-bodoni">
+            <span className="italic text-white/90 tracking-wider font-display">
               precision
             </span>
           </motion.h1>
@@ -110,10 +110,20 @@ const Hero = () => {
         </motion.div>
 
         {/* RIGHT */}
-        <div className="flex-1 ">
-          <div className="img w-3/4 md:w-80 h-80 mx-auto rounded-2xl overflow-hidden border-2 border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.45)]">
-            <img src={profile} alt="Profile" />
-          </div>
+        <div className="flex-1 flex justify-center mt-12 md:mt-0 w-full relative z-40">
+          <motion.div 
+            animate={{ y: [0, -12, 0] }}
+            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+            className="w-64 h-64 md:w-80 md:h-80 relative rounded-2xl md:rounded-[2rem] overflow-hidden border border-cyan-500/30 shadow-[0_0_30px_rgba(34,211,238,0.2)] hover:shadow-[0_0_40px_rgba(34,211,238,0.4)] transition-shadow duration-500"
+          >
+            <img 
+              src={profile} 
+              alt="Profile" 
+              className="w-full h-full object-cover object-top opacity-90 hover:opacity-100 hover:scale-105 transition-all duration-700 pointer-events-auto"
+            />
+            {/* Subtle inner glow overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-cyan-900/40 via-transparent to-transparent pointer-events-none mix-blend-overlay"></div>
+          </motion.div>
         </div>
       </div>
 

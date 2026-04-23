@@ -14,7 +14,7 @@ const Navbar = () => {
       {/* Remove min-h-screen */}
       <nav className="w-full px-10 md:px-20 h-full flex items-center justify-between">
         <a
-          className="logo font-display  text-xl font-semibold tracking-wider title-text"
+          className="logo font-display text-2xl font-black tracking-widest logo-gradient transition-all duration-300 hover:scale-105 active:scale-95"
           href="#home"
         >
           TRP

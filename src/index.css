@@ -61,6 +61,27 @@
     font-weight: 700;
     filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.25));
   }
+
+  .logo-gradient {
+    background: linear-gradient(
+      to right,
+      #00f2fe 0%,
+      #4facfe 50%,
+      #00f2fe 100%
+    ); /* Cyan to bright blue */
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.4));
+    animation: shine 3s linear infinite;
+  }
+
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
 }
 
 /* =========================

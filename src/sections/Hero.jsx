@@ -4,6 +4,7 @@ import arrow from "../assets/arrow.png";
 import { motion } from "framer-motion";
 import profile from "../assets/profile.jpg";
 
+
 const Hero = () => {
   const techStack = [
     "HTML",

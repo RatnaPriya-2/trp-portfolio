@@ -5,7 +5,7 @@ const ProjectCard = ({ project }) => {
   const isFeatured = project.featured;
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -15,7 +15,9 @@ const ProjectCard = ({ project }) => {
       }`}
     >
       {/* Image Section */}
-      <div className={`image relative overflow-hidden ${isFeatured ? "w-full lg:w-3/5 h-64 lg:h-auto" : "w-full h-56"}`}>
+      <div
+        className={`image relative overflow-hidden ${isFeatured ? "w-full lg:w-3/5 h-64 lg:h-auto" : "w-full h-56"}`}
+      >
         <img
           src={project.image}
           alt={project.title}
@@ -25,12 +27,24 @@ const ProjectCard = ({ project }) => {
       </div>
 
       {/* Content Section */}
-      <div className={`card-content flex flex-col justify-center space-y-4 ${isFeatured ? "w-full lg:w-2/5 p-8 lg:p-10" : "w-full p-6"}`}>
-        {isFeatured && <p className="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-1">Featured Project</p>}
-        
-        <h3 className={`${isFeatured ? "text-3xl" : "text-xl"} font-semibold text-white`}>{project.title}</h3>
-        <p className="text-sm text-white/70 leading-relaxed">{project.description}</p>
-        
+      <div
+        className={`card-content flex flex-col justify-center space-y-4 ${isFeatured ? "w-full lg:w-2/5 p-8 lg:p-10" : "w-full p-6"}`}
+      >
+        {isFeatured && (
+          <p className="text-cyan-400 text-xs font-bold tracking-widest uppercase mb-1">
+            Featured Project
+          </p>
+        )}
+
+        <h3
+          className={`${isFeatured ? "text-3xl" : "text-xl"} font-semibold text-white`}
+        >
+          {project.title}
+        </h3>
+        <p className="text-sm text-white/70 leading-relaxed">
+          {project.description}
+        </p>
+
         <div className="flex flex-wrap gap-2 pt-2">
           {project.tech.map((tech, i) => (
             <span
@@ -41,7 +55,7 @@ const ProjectCard = ({ project }) => {
             </span>
           ))}
         </div>
-        
+
         <div className="cta flex gap-6 pt-4 text-sm font-medium">
           <a
             href={project.live}

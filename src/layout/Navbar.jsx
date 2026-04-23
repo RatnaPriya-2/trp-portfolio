@@ -14,10 +14,12 @@ const Navbar = () => {
       {/* Remove min-h-screen */}
       <nav className="w-full px-10 md:px-20 h-full flex items-center justify-between">
         <a
-          className="logo font-display text-2xl font-black tracking-widest logo-gradient transition-all duration-300 hover:scale-105 active:scale-95"
+          className="logo font-sans text-2xl font-black flex items-center group transition-all duration-300"
           href="#home"
         >
-          TRP
+          <span className="text-white group-hover:text-cyan-400 transition-colors duration-300">T</span>
+          <span className="mx-1 px-1.5 py-0.5 border-2 border-cyan-500 text-cyan-500 rounded-sm group-hover:bg-cyan-500 group-hover:text-black transition-all duration-300">R</span>
+          <span className="text-white group-hover:text-cyan-400 transition-colors duration-300">P</span>
         </a>
         {/* Desktop Container: Hide on mobile, flex on large */}
         <div className="hidden md:flex items-center gap-8">

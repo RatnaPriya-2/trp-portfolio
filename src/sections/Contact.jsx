@@ -112,7 +112,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className=" mt-60 pb-12 flex flex-col items-center relative min-h-screen px-6 md:px-20  z-40 scroll-mt-30"
+      className=" mt-60 pb-12 flex flex-col items-center relative min-h-screen px-6 md:px-20  z-40 scroll-mt-32"
     >
       <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-20">
         <h2 className="text-xl font-semibold mb-6 title-text">Get in Touch</h2>
@@ -194,7 +194,7 @@ const Contact = () => {
           >
             <div className="flex flex-col">
               <label htmlFor="full-name" className="text-sm mb-6">
-                Full Name <span className="">*</span>
+                Full Name <span>*</span>
               </label>
               <input
                 type="text"

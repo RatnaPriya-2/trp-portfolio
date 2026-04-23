@@ -32,7 +32,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className=" mt-60 flex flex-col md:flex-row items-center justify-center flex-wrap relative min-h-screen px-6 md:px-20 gap-10 z-40 scroll-mt-30  "
+      className=" mt-60 flex flex-col md:flex-row items-center justify-center flex-wrap relative min-h-screen px-6 md:px-20 gap-10 z-40 scroll-mt-32  "
     >
       {/* Content */}
 

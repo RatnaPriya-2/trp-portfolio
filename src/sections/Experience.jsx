@@ -28,7 +28,7 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className=" mt-60  relative min-h-screen px-6 md:px-20 gap-10 z-40 scroll-mt-30 "
+      className=" mt-60  relative min-h-screen px-6 md:px-20 gap-10 z-40 scroll-mt-32 "
     >
       <div className="text-center max-w-3xl mx-auto flex flex-col mb-20">
         <h2 className="text-xl  font-semibold mb-6 title-text">My Journey</h2>

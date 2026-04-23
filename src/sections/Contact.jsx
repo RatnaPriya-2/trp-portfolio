@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
+import send from "../assets/send.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -97,44 +99,84 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative flex flex-col items-center gap-20 py-15 px-8 z-20  scroll-mt-20 min-h-screen"
+      className=" mt-60 flex flex-col items-center relative min-h-screen px-20  z-40 scroll-mt-30"
     >
-      {/* bg-linear-to-b from-black via-[#07131c] to-[#16374e] */}
-      {/* Background */}
-      {/* <img
-        src={ocean}
-        className="absolute inset-0 w-full h-full object-cover object-center"
-      /> */}
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-linear-to-b from-black/90 via-black/80 to-black/90"></div> */}
-      {/* <div className="absolute inset-0 bg-linear-to-b from-[#07131c]/90 via-black/85 to-[#07131c]/90 backdrop-blur-lg"></div> */}
-      <h2 className="z-50 text-[40px] tracking-widest font-display">CONTACT</h2>
-      <div className="flex gap-25 text-sm max-w-4xl w-full flex-col md:flex-row ">
+      <h2 className="text-xl font-semibold mb-6 title-text">
+        Get in Touch
+      </h2>
+
+      <h3 className="text-3xl md:text-4xl mb-6 font-semibold leading-snug max-w-md">
+        Let’s <span className="title-text">work</span> together
+      </h3>
+
+      <div className=" flex max-w-4xl w-full flex-col md:flex-row items-start justify-center gap-15">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="left-section space-y-4 flex-1 max-w-md z-40"
+          className="space-y-3 flex-1"
         >
-          <p>Let's work together!</p>
-          <p>
-            Feel free to reach out if you have a project in mind, a question, or
-            just want to say hi.
+          <p className="text-white/70 text-sm leading-relaxed">
+            Have a project, a question, or just want to connect? Feel free to
+            reach out.
           </p>
-          <p>I’m always open to discussing new opportunities and ideas.</p>
-          <p>
-            <span>Email: ratnapriya.t@gmail.com</span>
+
+          <p className="text-white/70 text-sm">
+            I’m open to new opportunities and ideas.
           </p>
+
+          <div className="mt-6 flex flex-col gap-4 p-5 rounded-xl bg-cyan-800/30 backdrop-blur-sm border border-cyan-700/30">
+            <h2 className="text-bold text-lg text-white">
+              Contact Information
+            </h2>
+            <div className="contact-details p-3 flex flex-col gap-8 w-full">
+              <div className="flex gap-6 items-center">
+                <span className="p-3 bg-cyan-700/20 rounded-xl">
+                  <Mail className="contact-icon text-cyan-300 w-5 h-5 " />
+                </span>
+                <div className="space-y-1">
+                  <p className="contact-label text-white/70 text-xs">Email</p>
+                  <p className="contact-info text-md text-white">
+                    ratnapriya.t@gmail.com
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-6 items-center">
+                <span className="p-3 bg-cyan-700/20 rounded-xl">
+                  <Phone className="contact-icon text-cyan-300 w-5 h-5 " />
+                </span>
+                <div className="space-y-1">
+                  <p className="contact-label text-white/70 text-xs">Phone</p>
+                  <p className="contact-info text-md text-white">
+                    +91 9505931088
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-6 items-center">
+                <span className="p-3 bg-cyan-700/20 rounded-xl">
+                  <MapPin className="contact-icon text-cyan-300 w-5 h-5 " />
+                </span>
+                <div className="space-y-1">
+                  <p className="contact-label text-white/70 text-xs">
+                    Location
+                  </p>
+                  <p className="contact-info text-md text-white">
+                    Hyderabad, India
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="right-section flex-1 min-w-75 max-w-lg "
+          className="right-section flex-1 w-full min-w-75 max-w-lg h-full z-40"
         >
           <form
             action=""
-            className="space-y-4 w-full border border-white p-6 backdrop-blur-sm"
+            className="space-y-5 w-full border border-white/10 p-6 rounded-xl backdrop-blur-sm"
             onSubmit={handleSubmit}
           >
             <div className="flex flex-col">
@@ -195,20 +237,30 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className={`w-full flex items-center justify-center gap-2 ${isLoading ? "bg-[#1f4e6b] text-white cursor-not-allowed" : "bg-white text-black hover:bg-[#1f4e6b] hover:text-white"}  py-3 px-4 transition-all duration-200 active:scale-98 shadow-lg shadow-header/25 focus-visible:ring-2 focus-visible:ring-header/50 font-medium ${isLoading ? " cursor-not-allowed" : ""} active:scale-98 `}
+              className={`w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm text-white
+  bg-cyan-700/80 border border-cyan-500/40
+  shadow-[0_0_15px_rgba(34,211,238,0.25)]
+  transition-all duration-300
+  hover:bg-cyan-600 hover:shadow-[0_0_25px_rgba(34,211,238,0.35)]
+  hover:-translate-y-0.5 active:scale-95
+  ${isLoading ? "cursor-not-allowed opacity-80" : ""}`}
             >
               {isLoading ? (
                 <>
-                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  <div className=" text-white">SENDING...</div>
+                  <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                  <span>SENDING...</span>
                 </>
               ) : (
-                "SEND MESSAGE"
+                <>
+                  SEND MESSAGE
+                  <Send className="w-4 h-4 group-hover:translate-x-1 transition" />
+                </>
               )}
             </button>
           </form>
         </motion.div>
       </div>
+
       <AnimatePresence>
         {isSubmitted && (
           <motion.div

@@ -2,6 +2,7 @@ import React from "react";
 import download from "../assets/download.png";
 import arrow from "../assets/arrow.png";
 import { motion } from "framer-motion";
+import profile from "../assets/profile.jpg";
 
 const Hero = () => {
   const techStack = [
@@ -24,18 +25,6 @@ const Hero = () => {
 
   return (
     <section className="pt-20 flex flex-col items-center justify-center relative min-h-screen">
-      {/* Background */}
-      {/* <motion.img
-        src={ocean}
-        className="absolute inset-0 w-full h-full object-cover"
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 2 }}
-      /> */}
-
-      {/* Overlay */}
-      {/* <div className="absolute inset-0 bg-linear-to-b from-black/90 via-black/85 to-black/90"></div> */}
-
       {/* Content */}
       <div className="relative z-50 flex items-center justify-center gap-8 flex-col md:flex-row px-10 md:px-20">
         {/* LEFT */}
@@ -59,7 +48,7 @@ const Hero = () => {
             variants={fadeInUp}
           >
             Crafting{" "}
-            <span className="bg-linear-to-r from-cyan-600 via-cyan-700 to-cyan-600 bg-clip-text text-transparent font-bold drop-shadow-[0_0_6px_rgba(34,211,238,0.25)]">
+            <span className="title-text">
               modern
             </span>{" "}
             web experiences with{" "}
@@ -100,7 +89,7 @@ const Hero = () => {
             </a>
 
             {/* Download Resume */}
-            <div className="relative inline-block w-full md:w-auto rounded-full p-[1px]">
+            <div className="relative inline-block w-full md:w-auto rounded-full p-px">
               <div className="absolute inset-0 rounded-full animate-border-move z-0"></div>
 
               <a
@@ -121,7 +110,11 @@ const Hero = () => {
         </motion.div>
 
         {/* RIGHT */}
-        <div className="flex-1"></div>
+        <div className="flex-1 ">
+          <div className="img w-3/4 md:w-80 h-80 mx-auto rounded-2xl overflow-hidden border-2 border-cyan-500/30 shadow-[0_0_20px_rgba(34,211,238,0.45)]">
+            <img src={profile} alt="Profile" />
+          </div>
+        </div>
       </div>
 
       {/* Tech Stack */}

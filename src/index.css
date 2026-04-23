@@ -57,6 +57,19 @@
   .font-bodoni {
     font-family: "Bodoni Moda", serif; /* Hero "precision" */
   }
+  .title-text {
+    background: linear-gradient(
+      to right,
+      #0891b2,
+      #0e7490,
+      #0891b2
+    ); /* cyan-600 → cyan-700 → cyan-600 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.25));
+  }
 }
 
 /* =========================

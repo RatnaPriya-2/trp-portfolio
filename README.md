@@ -1,16 +1,65 @@
-# React + Vite
+# Ratna Priya | Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio built with React and Tailwind CSS, showcasing a journey from banking to web development and featuring real-world problem-solving projects.
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+[View Live Portfolio](https://trp-portfolio.netlify.app/) *(Replace with actual link if different)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Key Features
+- **Modern UI/UX**: Clean, glassmorphism-inspired design with a focus on usability.
+- **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
+- **Fluid Animations**: Leveraging Framer Motion for premium-feel transitions and interactions.
+- **Contact Integration**: Fully functional contact form powered by EmailJS.
+- **Dynamic Projects**: Interactive showcase of selected works with live demos and source links.
 
-## React Compiler
+## 🛠 Tech Stack
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite 6](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Form Handling**: [EmailJS](https://www.emailjs.com/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📂 Project Structure
+```text
+src/
+├── assets/         # Images, icons, and static assets
+├── components/     # Reusable UI components (ProjectCard, SmallCard)
+├── layout/         # Core layout components (Navbar, Footer)
+├── sections/       # Main portfolio sections (Hero, About, Projects, Experience, Contact)
+├── App.jsx         # Main application assembly
+└── index.css       # Global styles and Tailwind configuration
+```
 
-## Expanding the ESLint configuration
+## 🛠 Setup & Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/RatnaPriya-2/trp-portfolio.git
+   cd trp-portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Configure EmailJS** (Optional - to make the contact form work on your own account)
+   - Create an account at [emailjs.com](https://www.emailjs.com/).
+   - Replace the Service ID, Template ID, and Public Key in `src/sections/Contact.jsx`.
+
+4. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## 📄 License
+This project is for personal portfolio use. Feel free to use the code as inspiration for your own projects!
+
+---
+*Created with precision by Ratna Priya*

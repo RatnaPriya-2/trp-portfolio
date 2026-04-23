@@ -7,15 +7,14 @@ const Navbar = () => {
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
     { label: "Experience", href: "#experience" },
-    { label: "Testimonials", href: "#testimonials" },
   ];
 
   return (
-    <header className="fixed top-0 h-20 w-full z-100 bg-header backdrop-blur-sm shadow-md shadow-black/25">
+    <header className="fixed top-0 h-20 w-full z-[100] bg-header backdrop-blur-sm shadow-md shadow-black/25">
       {/* Remove min-h-screen */}
       <nav className="w-full px-10 md:px-20 h-full flex items-center justify-between">
         <a
-          className="logo font-display  text-xl font-semibold tracking-wider text-main"
+          className="logo font-display  text-xl font-semibold tracking-wider title-text"
           href="#home"
         >
           TRP
@@ -60,13 +59,14 @@ const Navbar = () => {
         </div>
       </nav>
       {isOpen && (
-        <div className="md:hidden animate-rise relative z-50">
-          <div className="container mx-auto bg-black px-6 py-6 flex flex-col gap-5">
+        <div className="md:hidden animate-rise absolute top-20 left-0 w-full h-[calc(100vh-5rem)] bg-black/95 backdrop-blur-md z-[90]">
+          <div className=" mx-auto px-10 py-10 flex flex-col items-center gap-6 border-t border-cyan-900/30">
             {navLinks.map((link, i) => (
               <a
-                className="text-sm text-main/70 hover:text-main"
+                className="text-sm text-main/70 hover:text-main transition-colors"
                 key={i}
                 href={link.href}
+                onClick={() => setIsOpen(!isOpen)}
               >
                 {link.label}
               </a>
@@ -74,7 +74,7 @@ const Navbar = () => {
 
             <a
               href="#contact"
-              className="w-full md:w-auto justify-center
+              className="w-[80%] max-w-sm justify-center mt-2
                            px-6 py-3 rounded-full flex items-center gap-2 text-sm text-white
                            bg-cyan-700/80 border border-cyan-500/40
                            shadow-[0_0_15px_rgba(34,211,238,0.25)]
@@ -83,8 +83,9 @@ const Navbar = () => {
                            hover:shadow-[0_0_25px_rgba(34,211,238,0.35)]
                            hover:-translate-y-0.5
                            active:scale-95"
+              onClick={() => setIsOpen(!isOpen)}
             >
-              Get In Touch
+              Contact Me
             </a>
           </div>
         </div>

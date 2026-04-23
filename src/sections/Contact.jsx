@@ -112,35 +112,33 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className=" mt-60 flex flex-col items-center relative min-h-screen px-6 md:px-20  z-40 scroll-mt-30"
+      className=" mt-60 pb-12 flex flex-col items-center relative min-h-screen px-6 md:px-20  z-40 scroll-mt-30"
     >
       <div className="text-center max-w-3xl mx-auto flex flex-col items-center mb-20">
-        <h2 className="text-xl font-semibold mb-6 title-text">
-          Get in Touch
-        </h2>
+        <h2 className="text-xl font-semibold mb-6 title-text">Get in Touch</h2>
 
         <h3 className="text-3xl md:text-4xl font-semibold leading-snug max-w-md">
           Let’s <span className="title-text">work</span> together
         </h3>
       </div>
 
-      <div className=" flex max-w-4xl w-full flex-col md:flex-row items-start justify-center gap-15">
+      <div className=" flex max-w-4xl w-full flex-col md:flex-row items-center md:items-start justify-center gap-15">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="space-y-3 flex-1"
+          className="space-y-3 flex-1 w-full max-w-lg"
         >
-          <p className="text-white/70 text-sm leading-relaxed">
+          <p className="text-white/70 text-center md:text-left  leading-relaxed">
             Have a project, a question, or just want to connect? Feel free to
             reach out.
           </p>
 
-          <p className="text-white/70 text-sm">
+          <p className="text-white/70  leading-relaxed text-center md:text-left">
             I’m open to new opportunities and ideas.
           </p>
 
-          <div className="mt-6 flex flex-col gap-4 p-5 rounded-xl bg-cyan-800/30 backdrop-blur-sm border border-cyan-700/30">
+          <div className="mt-6 flex flex-col w-full gap-4 p-5 rounded-xl bg-cyan-800/30 backdrop-blur-sm border border-cyan-700/30">
             <h2 className="text-bold text-lg text-white">
               Contact Information
             </h2>
@@ -187,7 +185,7 @@ const Contact = () => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="right-section flex-1 w-full min-w-75 max-w-lg h-full z-40"
+          className="right-section flex-1 w-full  max-w-lg  h-full z-40"
         >
           <form
             action=""
